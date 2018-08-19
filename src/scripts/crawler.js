@@ -1,10 +1,11 @@
 const request = require('request-promise');
 const cheerio = require('cheerio');
-const locations = require('./locations.js');
+const sources = require('./sources.js');
+
 const locPromises = [];
 
 const crawlSourceData = () => {
-  locations.forEach(loc => {
+  sources.forEach(loc => {
     const options = {
       uri: loc,
       transform: dom => cheerio.load(dom),
