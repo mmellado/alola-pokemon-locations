@@ -13,21 +13,44 @@
     "js-beautify": "^1.7.5",
     "request": "^2.88.0",
     "request-promise": "^4.2.2",
-    "sanitize-html": "^1.18.4"
+    "sanitize-html": "^1.18.4",
+    "vue": "^2.5.17"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "cross-env": "^5.2.0",
+    "css-loader": "^1.0.0",
     "eslint": "^5.4.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^3.0.1",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-vue": "^4.7.1",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "pre-commit": "^1.2.2",
     "prettier": "^1.14.2",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "vue-loader": "^15.4.0",
+    "vue-style-loader": "^4.1.2",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
   },
   "scripts": {
-    "lint": "eslint ./src/**/*.js",
-    "clean": "rimraf data",
+    "precommit-msg": "echo 'Pre-commit checks...' && exit 0",
+    "lint": "eslint ./src/**/*.{js,vue}",
+    "clean": "rimraf dist",
+    "clean:data": "rimraf data",
     "crawl": "node ./src/scripts/crawler.js",
-    "build": "npm run clean && npm run crawl"
-  }
+    "dev": "npm run clean && cross-env NODE_ENV=development webpack-dev-server",
+    "build": "npm run clean && cross-env NODE_ENV=production webpack"
+  },
+  "pre-commit": [
+    "precommit-msg",
+    "lint"
+  ]
 }
