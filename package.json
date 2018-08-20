@@ -10,8 +10,10 @@
     "chalk": "^2.4.1",
     "cheerio": "^1.0.0-rc.2",
     "fs-extra": "^7.0.0",
+    "js-beautify": "^1.7.5",
     "request": "^2.88.0",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "sanitize-html": "^1.18.4"
   },
   "devDependencies": {
     "eslint": "^5.4.0",
@@ -24,7 +26,7 @@
   },
   "scripts": {
     "lint": "eslint ./src/**/*.js",
-    "clean": "rimraf dist",
+    "clean": "rimraf data",
     "crawl": "node ./src/scripts/crawler.js",
     "build": "npm run clean && npm run crawl"
   }

@@ -3,14 +3,35 @@ const request = require('request-promise');
 const cheerio = require('cheerio');
 const chalk = require('chalk');
 const fs = require('fs-extra');
+const beautify = require('js-beautify').html;
+const sanitizeHTML = require('sanitize-html');
 const sources = require('./sources.js');
 
-const DIST_DIR = path.resolve(__dirname, '../../dist');
-const OUT_DIR = path.resolve(DIST_DIR, 'html-data');
-const SUN_MOON_DIR = path.resolve(OUT_DIR, 'sun-moon');
-const ULTRA_SUN_MOON_DIR = path.resolve(OUT_DIR, 'ultra-sun-moon');
-const MENU_FILE = path.resolve(DIST_DIR, 'menu.json');
+const OUT_DIR = path.resolve(__dirname, '../../data');
+const MENU_FILE = path.resolve(OUT_DIR, 'menu.json');
 const MENU = [{ name: 'Home', file: 'home.html' }];
+const SANITIZE_HTML_OPTIONS = {
+  allowedTags: [
+    'h2',
+    'h3',
+    'h4',
+    'img',
+    'span',
+    'p',
+    'div',
+    'table',
+    'th',
+    'tr',
+    'td',
+    'tbody',
+  ],
+  allowedAttributes: {
+    img: ['src'],
+    th: ['colspan', 'rowspan', 'style'],
+    td: ['colspan', 'rowspan', 'style'],
+    h2: ['id'],
+  },
+};
 
 const crawlSourceData = () => {
   const promises = [];
@@ -48,8 +69,8 @@ const crawlSourceData = () => {
     .catch(err => err);
 };
 
-const buildGameMarkup = (data, area) => {
-  let markup = `<h2>${area}</h2>`;
+const buildGameMarkup = (data, area, id) => {
+  let markup = `<h2 id="${id}">${area}</h2>`;
   if (!data.length) {
     markup = `${markup}<h3>No Pokemon data for this area</h3>`;
   } else {
@@ -57,12 +78,17 @@ const buildGameMarkup = (data, area) => {
       markup = `${markup}${node}`;
     });
   }
-  return markup;
+  return `<div class="area">\n${beautify(
+    sanitizeHTML(markup, SANITIZE_HTML_OPTIONS)
+  )}\n</div>`;
 };
 
-const buildDataObject = () => {
+const buildHTMLFiles = () => {
   const srcData = crawlSourceData();
-  const promises = [];
+  const sunMoonFile = path.resolve(OUT_DIR, 'sun-moon.html');
+  const ultraSunMoonFile = path.resolve(OUT_DIR, 'ultra-sun-moon.html');
+  let sunMoonMarkup = '';
+  let ultraSunMoonMarkup = '';
 
   return srcData
     .then(data => {
@@ -84,24 +110,30 @@ const buildDataObject = () => {
           }
         });
 
-        const fileName = `${area
+        const id = area
           .toLowerCase()
           .replace(/ /g, '-')
-          .replace(/'/g, '')}.html`;
-        const sunFileName = path.resolve(SUN_MOON_DIR, fileName);
-        const ultraFileName = path.resolve(ULTRA_SUN_MOON_DIR, fileName);
-        const sunMoonMarkup = buildGameMarkup(sunMoonData, area);
-        const ultraSunMoonMarkup = buildGameMarkup(ultraSunMoonData, area);
-        MENU.push({ name: area, url: fileName });
-        promises.push(
-          fs
-            .writeFile(sunFileName, sunMoonMarkup)
-            .then(() => fs.writeFile(ultraFileName, ultraSunMoonMarkup))
-            .then(() => console.log(`${chalk.blue.bold(area)} done`))
-            .catch(err => err)
-        );
+          .replace(/'/g, '');
+
+        sunMoonMarkup = `${sunMoonMarkup}\n${buildGameMarkup(
+          sunMoonData,
+          area,
+          id
+        )}`;
+        ultraSunMoonMarkup = `${ultraSunMoonMarkup}\n${buildGameMarkup(
+          ultraSunMoonData,
+          area,
+          id
+        )}`;
+        MENU.push({ name: area, id });
+
+        console.info(`${chalk.blue.bold(area)} done`);
       });
-      return Promise.all(promises).catch(err => err);
+
+      return fs
+        .outputFile(sunMoonFile, sunMoonMarkup)
+        .then(() => fs.outputFile(ultraSunMoonFile, ultraSunMoonMarkup))
+        .catch(err => err);
     })
     .catch(err => err);
 };
@@ -112,9 +144,8 @@ const buildMenu = () => {
 };
 
 const build = () => {
-  fs.mkdirp(SUN_MOON_DIR)
-    .then(() => fs.mkdirp(ULTRA_SUN_MOON_DIR))
-    .then(() => buildDataObject())
+  fs.mkdirp(OUT_DIR)
+    .then(() => buildHTMLFiles())
     .then(() => buildMenu())
     .catch(err => console.error(chalk.bold.red(err)));
 };
