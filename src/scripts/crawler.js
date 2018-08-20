@@ -94,6 +94,10 @@ const buildHTMLFiles = () => {
     .then(data => {
       data.forEach(pageData => {
         const { area, nodes, $ } = pageData;
+        const id = area
+          .toLowerCase()
+          .replace(/ /g, '-')
+          .replace(/'/g, '');
         const sunMoonData = [];
         const ultraSunMoonData = [];
         let game = '';
@@ -101,19 +105,12 @@ const buildHTMLFiles = () => {
         nodes.forEach($node => {
           if ($node.prop('tagName') === 'H3') {
             game = $node.text();
-          }
-
-          if (game.includes('Sun and Moon')) {
+          } else if (game.includes('Sun and Moon')) {
             sunMoonData.push($.html($node));
           } else if (game.includes('Ultra Sun')) {
             ultraSunMoonData.push($.html($node));
           }
         });
-
-        const id = area
-          .toLowerCase()
-          .replace(/ /g, '-')
-          .replace(/'/g, '');
 
         sunMoonMarkup = `${sunMoonMarkup}\n${buildGameMarkup(
           sunMoonData,
