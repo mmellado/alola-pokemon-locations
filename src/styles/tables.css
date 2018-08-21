@@ -9,9 +9,15 @@
 
 .area > .table > .row {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: flex-start;
   border-bottom: 1px solid #eee;
+}
+
+.area > .table > .row > .cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .heading {
@@ -22,7 +28,6 @@
   width: calc(100% / 13);
   min-height: 40px;
   line-height: 40px;
-  padding: 5px;
   text-align: center;
 }
 
@@ -36,12 +41,14 @@
   width: calc(200% / 13);
 }
 
-.cell[colspan='3'] {
-  width: calc(100% / 13);
-}
-
+/* Games colum title */
 .cell[colspan='6'] {
   width: calc(200% / 13);
+}
+
+/* Games colums */
+.cell[colspan='3'] {
+  width: calc(100% / 13);
 }
 
 .area > .table > .row > .cell:nth-child(1) {
@@ -49,33 +56,30 @@
   text-align: left;
 }
 
+/* Alies column */
 .area > .table > .row > .cell:nth-child(2) {
   width: calc(500% / 13);
   display: flex;
   flex-wrap: wrap;
-  text-align: left;
+  justify-content: flex-start;
 }
 
 .area > .table > .row > .cell:nth-child(5) {
   text-align: left;
 }
 
-.table .table > .row > .cell:nth-child(1) {
-  width: 40px;
-  height: 40px !important;
-  border-radius: 100% !important;
-  margin-right: 10px;
-  padding: 0;
-}
-
 .table .row:nth-child(2) .heading {
-  width: calc(100% / 13);
+  width: calc(100% / 13) !important;
   height: 40px;
-  text-align: center;
+  text-align: center !important;
 }
 
 .area > .table > .row:nth-child(2) > .heading:first-child {
   margin-left: calc(1100% / 13);
+}
+
+.area > .table > .row:nth-child(2) > .heading:first-child[colspan='13'] {
+  width: 100%;
 }
 
 .table .row:nth-child(2) .heading img {
@@ -84,6 +88,9 @@
 
 .area {
   margin-bottom: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 20px;
 }
 
 .area > h2 {
@@ -91,6 +98,7 @@
   text-align: center;
   font-weight: bold;
   margin-bottom: 15px;
+  margin-top: 20px;
 }
 
 .area > .table {
@@ -107,6 +115,41 @@ h4 {
   margin-bottom: 10px;
 }
 
-.area > .table > .row > .cell > .table .cell {
-  display: inline-block;
+.cell > .table span {
+  margin-right: 5px;
+}
+
+.cell > .table .row {
+  display: flex;
+  align-items: center;
+}
+
+.cell > .table .row .cell:nth-child(1) {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 100% !important;
+  margin: 10px;
+  padding: 0;
+}
+
+.cell > .table .cell {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  text-align: left;
+}
+
+.cell > .table .cell span:nth-child(2) {
+  font-size: 10px;
+}
+
+img {
+  width: 40px;
+  height: 40px;
+}
+
+footer {
+  padding: 40px 20px 20px 20px;
+  text-align: center;
+  font-size: 10px;
 }

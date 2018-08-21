@@ -28,7 +28,7 @@ export default {
 <template>
   <div id="wrapper">
     <header>
-      <h1>Alola Pokemon Locations</h1>
+      <h1 v-bind:class="game">Alola Pokemon Locations</h1>
       <ul>
         <li><button v-bind:class="{active: game === 'ultra-sun-moon'}" v-on:click="enableUltraSunMoon">Pokemon Ultra Sun and Ultra Moon</button></li>
         <li><button v-bind:class="{active: game === 'sun-moon'}" v-on:click="enableSunMoon">Pokemon Sun and Moon</button></li>
@@ -112,7 +112,8 @@ main {
 }
 
 main aside {
-  width: 20%;
+  width: 15%;
+  min-width: 200px;
   position: sticky;
   top: 100px;
   left: 0;
@@ -125,9 +126,26 @@ main aside {
 }
 
 main > div {
-  width: 80%;
+  width: 85%;
   padding-left: 20px;
   padding-top: 20px;
-  margin-left: 20%;
+  margin-left: 15%;
+}
+
+h1 {
+  display: block;
+  width: 359px;
+  height: 90px;
+  color: transparent;
+}
+
+h1.ultra-sun-moon {
+  background: url('../img/ultra-sun-moon.png');
+  background-size: cover;
+}
+
+h1.sun-moon {
+  background: url('../img/sun-moon.png');
+  background-size: cover;
 }
 </style>
