@@ -17,7 +17,7 @@ li[data-v-476f3fbd]:before {
 }
 
 
-header[data-v-6e601f83] {
+header[data-v-ec4a6a64] {
   position: sticky;
   height: 100px;
   top: 0;
@@ -31,16 +31,47 @@ header[data-v-6e601f83] {
   background: #eee;
   box-shadow: 0 5px 5px -2px #ccc;
 }
-header li[data-v-6e601f83] {
+header li[data-v-ec4a6a64] {
   display: inline-block;
-  margin-left: 10px;
 }
-main[data-v-6e601f83] {
+header button[data-v-ec4a6a64] {
+  height: 50px;
+  line-height: 50px;
+  background: #ccc;
+  border: 1px solid #333;
+  border-radius: 3px;
+  font-size: 16px;
+  padding: 0 10px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+header li:first-child button[data-v-ec4a6a64] {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 0;
+  margin-right: -4px;
+}
+header li:last-child button[data-v-ec4a6a64]:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+header button.active[data-v-ec4a6a64],
+header button[data-v-ec4a6a64]:hover {
+  background: #96e0ff;
+  opacity: 1;
+  cursor: default;
+}
+header button[data-v-ec4a6a64]:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+main[data-v-ec4a6a64] {
   padding: 0 20px;
   position: relative;
 }
-main aside[data-v-6e601f83] {
-  width: 20%;
+main aside[data-v-ec4a6a64] {
+  width: 15%;
+  min-width: 200px;
   position: sticky;
   top: 100px;
   left: 0;
@@ -51,11 +82,25 @@ main aside[data-v-6e601f83] {
   padding-top: 20px;
   box-shadow: -5px 0 5px -2px #ccc inset;
 }
-main > div[data-v-6e601f83] {
-  width: 80%;
+main > div[data-v-ec4a6a64] {
+  width: 85%;
   padding-left: 20px;
   padding-top: 20px;
-  margin-left: 20%;
+  margin-left: 15%;
+}
+h1[data-v-ec4a6a64] {
+  display: block;
+  width: 359px;
+  height: 90px;
+  color: transparent;
+}
+h1.ultra-sun-moon[data-v-ec4a6a64] {
+  background: url(26d3d92f0e15bd8289eb531f244c76ed.png);
+  background-size: cover;
+}
+h1.sun-moon[data-v-ec4a6a64] {
+  background: url(d68fedc80d1f46ee61e71131b45806ef.png);
+  background-size: cover;
 }
 
 html,
@@ -163,6 +208,7 @@ section {
 }
 body {
   line-height: 1;
+  font-family: 'Roboto', sans-serif;
 }
 ol,
 ul {
@@ -184,32 +230,160 @@ table {
   border-spacing: 0;
 }
 
-table {
+.table {
   width: 100%;
 }
 
-table table {
-  width: auto;
+.area > .table {
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
 }
 
-td {
-  vertical-align: middle;
+.area > .table > .row {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  border-bottom: 1px solid #eee;
 }
 
-table.main-table > tbody > tr > td:nth-child(2) > img {
-  display: inline-block;
-  width: 40px;
+.area > .table > .row > .cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading {
+  font-weight: bold;
+}
+
+.cell {
+  width: calc(100% / 13);
+  min-height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.cell[colspan='13'] {
+  width: 100% !important;
+  text-align: center !important;
+  margin-left: 0 !important;
+}
+
+.cell[colspan='2'] {
+  width: calc(200% / 13);
+}
+
+/* Games colum title */
+.cell[colspan='6'] {
+  width: calc(200% / 13);
+}
+
+/* Games colums */
+.cell[colspan='3'] {
+  width: calc(100% / 13);
+}
+
+.area > .table > .row > .cell:nth-child(1) {
+  width: calc(200% / 13);
+  text-align: left;
+}
+
+/* Alies column */
+.area > .table > .row > .cell:nth-child(2) {
+  width: calc(500% / 13);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.area > .table > .row > .cell:nth-child(5) {
+  text-align: left;
+}
+
+.table .row:nth-child(2) .heading {
+  width: calc(100% / 13) !important;
   height: 40px;
-  float: left;
+  text-align: center !important;
+}
+
+.area > .table > .row:nth-child(2) > .heading:first-child {
+  margin-left: calc(1100% / 13);
+}
+
+.area > .table > .row:nth-child(2) > .heading:first-child[colspan='13'] {
+  width: 100%;
+}
+
+.table .row:nth-child(2) .heading img {
+  margin: 0 auto;
+}
+
+.area {
+  margin-bottom: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.area > h2 {
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 15px;
+  margin-top: 20px;
+}
+
+.area > .table {
+  margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.cell > .table span {
   margin-right: 5px;
 }
 
-table.main-table > tbody > tr > td:nth-child(2) > span {
-  display: inline-block;
-  width: 50%;
-  float: left;
+.cell > .table .row {
+  display: flex;
+  align-items: center;
+}
+
+.cell > .table .row .cell:nth-child(1) {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 100% !important;
+  margin: 10px;
+  padding: 0;
+}
+
+.cell > .table .cell {
+  display: flex;
+  flex-direction: column;
+  width: auto;
   text-align: left;
+}
+
+.cell > .table .cell span:nth-child(2) {
+  font-size: 10px;
+}
+
+img {
+  width: 40px;
   height: 40px;
+}
+
+footer {
+  padding: 40px 20px 20px 20px;
+  text-align: center;
+  font-size: 10px;
 }
 
 
