@@ -29,6 +29,7 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-vue": "^4.7.1",
+    "gh-pages": "^1.2.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.1",
@@ -49,7 +50,8 @@
     "clean:data": "rimraf data",
     "crawl": "node ./src/scripts/crawler.js",
     "dev": "npm run clean && cross-env NODE_ENV=development webpack-dev-server",
-    "build": "npm run clean && cross-env NODE_ENV=production webpack"
+    "build": "npm run clean && cross-env NODE_ENV=production webpack",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "pre-commit": [
     "precommit-msg",
