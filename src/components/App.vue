@@ -1,8 +1,9 @@
 <script>
 import Menu from './Menu.vue';
+import cleaner from '../scripts/table-cleaner';
 
-const sunMoonMarkup = require('../../data/sun-moon.html');
-const ultraSunMoonMarkup = require('../../data/ultra-sun-moon.html');
+const sunMoonMarkup = cleaner(require('../../data/sun-moon.html'));
+const ultraSunMoonMarkup = cleaner(require('../../data/ultra-sun-moon.html'));
 
 export default {
   name: 'App',
@@ -29,8 +30,8 @@ export default {
     <header>
       <h1>Alola Pokemon Locations</h1>
       <ul>
-        <li><button v-on:click="enableUltraSunMoon">Pokemon Ultra Sun and Ultra Moon</button></li>
-        <li><button v-on:click="enableSunMoon">Pokemon Sun and Moon</button></li>
+        <li><button v-bind:class="{active: game === 'ultra-sun-moon'}" v-on:click="enableUltraSunMoon">Pokemon Ultra Sun and Ultra Moon</button></li>
+        <li><button v-bind:class="{active: game === 'sun-moon'}" v-on:click="enableSunMoon">Pokemon Sun and Moon</button></li>
       </ul>
     </header>
     <main>
@@ -67,7 +68,42 @@ header {
 
 header li {
   display: inline-block;
-  margin-left: 10px;
+}
+
+header button {
+  height: 50px;
+  line-height: 50px;
+  background: #ccc;
+  border: 1px solid #333;
+  border-radius: 3px;
+  font-size: 16px;
+  padding: 0 10px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+header li:first-child button {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 0;
+  margin-right: -4px;
+}
+
+header li:last-child button:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+header button.active,
+header button:hover {
+  background: #96e0ff;
+  opacity: 1;
+  cursor: default;
+}
+
+header button:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 main {

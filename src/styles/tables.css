@@ -1,27 +1,112 @@
-table {
+.table {
   width: 100%;
 }
 
-table table {
-  width: auto;
+.area > .table {
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
 }
 
-td {
-  vertical-align: middle;
+.area > .table > .row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 1px solid #eee;
 }
 
-table.main-table > tbody > tr > td:nth-child(2) > img {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  float: left;
-  margin-right: 5px;
+.heading {
+  font-weight: bold;
 }
 
-table.main-table > tbody > tr > td:nth-child(2) > span {
-  display: inline-block;
-  width: 50%;
-  float: left;
+.cell {
+  width: calc(100% / 13);
+  min-height: 40px;
+  line-height: 40px;
+  padding: 5px;
+  text-align: center;
+}
+
+.cell[colspan='13'] {
+  width: 100% !important;
+  text-align: center !important;
+  margin-left: 0 !important;
+}
+
+.cell[colspan='2'] {
+  width: calc(200% / 13);
+}
+
+.cell[colspan='3'] {
+  width: calc(100% / 13);
+}
+
+.cell[colspan='6'] {
+  width: calc(200% / 13);
+}
+
+.area > .table > .row > .cell:nth-child(1) {
+  width: calc(200% / 13);
   text-align: left;
+}
+
+.area > .table > .row > .cell:nth-child(2) {
+  width: calc(500% / 13);
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.area > .table > .row > .cell:nth-child(5) {
+  text-align: left;
+}
+
+.table .table > .row > .cell:nth-child(1) {
+  width: 40px;
+  height: 40px !important;
+  border-radius: 100% !important;
+  margin-right: 10px;
+  padding: 0;
+}
+
+.table .row:nth-child(2) .heading {
+  width: calc(100% / 13);
   height: 40px;
+  text-align: center;
+}
+
+.area > .table > .row:nth-child(2) > .heading:first-child {
+  margin-left: calc(1100% / 13);
+}
+
+.table .row:nth-child(2) .heading img {
+  margin: 0 auto;
+}
+
+.area {
+  margin-bottom: 40px;
+}
+
+.area > h2 {
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.area > .table {
+  margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.area > .table > .row > .cell > .table .cell {
+  display: inline-block;
 }

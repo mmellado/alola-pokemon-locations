@@ -23,7 +23,6 @@ const SANITIZE_HTML_OPTIONS = {
     'th',
     'tr',
     'td',
-    'tbody',
   ],
   allowedAttributes: {
     img: ['src'],
@@ -32,6 +31,7 @@ const SANITIZE_HTML_OPTIONS = {
     h2: ['id'],
     table: ['class'],
     span: ['class'],
+    div: ['class', 'style'],
   },
 };
 
@@ -47,13 +47,13 @@ const crawlSourceData = () => {
       request(options)
         .then($ => {
           const area = $('h1#firstHeading').text();
+
           const $initialNode = $('span#Pok\\.C3\\.A9mon').parent();
           const nodes = [$initialNode];
           let $currentNode = $initialNode.next();
 
           do {
             if ($currentNode.prop('tagName') === 'TABLE') {
-              $currentNode.addClass('main-table');
               const $spans = $currentNode.find('span');
               $spans.each((i, el) => {
                 if (!$(el).find('img').length) {
@@ -84,7 +84,7 @@ const crawlSourceData = () => {
 const buildGameMarkup = (data, area, id) => {
   let markup = `<h2 id="${id}">${area}</h2>`;
   if (!data.length) {
-    markup = `${markup}<h3>No Pokemon data for this area</h3>`;
+    markup = `${markup}<p class="no-pkmn">No Pokemon data for this area</p>`;
   } else {
     data.forEach(node => {
       markup = `${markup}${node}`;
