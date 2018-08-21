@@ -8,8 +8,8 @@ const sanitizeHTML = require('sanitize-html');
 const sources = require('./sources.js');
 
 const OUT_DIR = path.resolve(__dirname, '../../data');
-const MENU_FILE = path.resolve(OUT_DIR, 'menu.json');
-const MENU = [{ name: 'Home', file: 'home.html' }];
+const MENU_FILE = path.resolve(OUT_DIR, 'menu.js');
+const MENU = [];
 const SANITIZE_HTML_OPTIONS = {
   allowedTags: [
     'h2',
@@ -30,6 +30,8 @@ const SANITIZE_HTML_OPTIONS = {
     th: ['colspan', 'rowspan', 'style'],
     td: ['colspan', 'rowspan', 'style'],
     h2: ['id'],
+    table: ['class'],
+    span: ['class'],
   },
 };
 
@@ -50,6 +52,16 @@ const crawlSourceData = () => {
           let $currentNode = $initialNode.next();
 
           do {
+            if ($currentNode.prop('tagName') === 'TABLE') {
+              $currentNode.addClass('main-table');
+              const $spans = $currentNode.find('span');
+              $spans.each((i, el) => {
+                if (!$(el).find('img').length) {
+                  $(el).addClass('table-span');
+                }
+              });
+            }
+
             nodes.push($currentNode);
             $currentNode = $currentNode.next().length
               ? $currentNode.next()
@@ -61,12 +73,12 @@ const crawlSourceData = () => {
 
           return { area, nodes, $ };
         })
-        .catch(err => err)
+        .catch(err => console.error(chalk.bold.red(err)))
     );
   });
   return Promise.all(promises)
     .then(data => data)
-    .catch(err => err);
+    .catch(err => console.error(chalk.bold.red(err)));
 };
 
 const buildGameMarkup = (data, area, id) => {
@@ -130,13 +142,13 @@ const buildHTMLFiles = () => {
       return fs
         .outputFile(sunMoonFile, sunMoonMarkup)
         .then(() => fs.outputFile(ultraSunMoonFile, ultraSunMoonMarkup))
-        .catch(err => err);
+        .catch(err => console.error(chalk.bold.red(err)));
     })
-    .catch(err => err);
+    .catch(err => console.error(chalk.bold.red(err)));
 };
 
 const buildMenu = () => {
-  const menuData = JSON.stringify(MENU);
+  const menuData = `const menu = ${JSON.stringify(MENU)}; export default menu;`;
   fs.writeFile(MENU_FILE, menuData).catch(err => err);
 };
 

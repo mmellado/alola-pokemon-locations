@@ -1,5 +1,5 @@
 {
-  "name": "pkmn-location-crawler",
+  "name": "alola-pokemon-locations",
   "version": "1.0.0",
   "description": "Tool to crawl the location of all pokemon in the Alola region from Bulbapedia and render it in a nicer way to follow as you play the game",
   "main": "index.js",
@@ -31,11 +31,13 @@
     "eslint-plugin-vue": "^4.7.1",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.1",
     "pre-commit": "^1.2.2",
     "prettier": "^1.14.2",
     "rimraf": "^2.6.2",
     "vue-loader": "^15.4.0",
     "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.5.17",
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.5"

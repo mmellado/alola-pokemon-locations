@@ -5,7 +5,9 @@
     "plugin:prettier/recommended"
   ],
   "rules": {
-    "no-console": 0
+    "no-console": 0,
+    "no-func": 0,
+    "func-names": 0
   },
   "env": {
     "es6": true,

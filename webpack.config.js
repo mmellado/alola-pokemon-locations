@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = {
   entry: './src/scripts/app.js',
@@ -17,7 +18,12 @@ const config = {
       },
       {
         test: /\.css$/,
-        use: ['vue-style-loader', 'css-loader'],
+        use: [
+          process.env.NODE_ENV !== 'production'
+            ? 'vue-style-loader'
+            : MiniCssExtractPlugin.loader,
+          'css-loader',
+        ],
       },
       {
         test: /\.js$/,
@@ -33,9 +39,10 @@ const config = {
     new VueLoaderPlugin(),
     new HTMLWebpackPlugin({
       hash: true,
-      title: 'Alola Pokemon Location',
       template: './src/index.html',
-      filename: './dist/index.html',
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'style.css',
     }),
   ],
   resolve: {

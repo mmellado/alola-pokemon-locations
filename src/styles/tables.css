@@ -1,0 +1,27 @@
+table {
+  width: 100%;
+}
+
+table table {
+  width: auto;
+}
+
+td {
+  vertical-align: middle;
+}
+
+table.main-table > tbody > tr > td:nth-child(2) > img {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  float: left;
+  margin-right: 5px;
+}
+
+table.main-table > tbody > tr > td:nth-child(2) > span {
+  display: inline-block;
+  width: 50%;
+  float: left;
+  text-align: left;
+  height: 40px;
+}
