@@ -1,153 +1,3 @@
-
-ol li[data-v-40668632] {
-  margin-bottom: 7px;
-  padding-left: 25px;
-  position: relative;
-}
-ol[data-v-40668632] {
-  margin-bottom: 25px;
-}
-ol li[data-v-40668632]:before {
-  content: '';
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background: url(//cdn.bulbagarden.net/upload/9/93/Bag_Pok%C3%A9_Ball_Sprite.png)
-    center center;
-  background-size: cover;
-  position: absolute;
-  left: 0;
-}
-ul[data-v-40668632] {
-  padding: 20px;
-}
-ul img[data-v-40668632] {
-  width: 20px;
-  height: 20px;
-}
-ul li[data-v-40668632] {
-  font-size: 0.9rem;
-  margin-bottom: 10px;
-}
-.legends[data-v-40668632] {
-  width: 100%;
-  position: sticky;
-  left: 0;
-  bottom: 0;
-  padding-bottom: 20px;
-  height: 44px;
-  overflow: hidden;
-  box-shadow: 0 -5px 5px -2px #ccc;
-  background: #eee;
-}
-.legends.open[data-v-40668632] {
-  height: auto;
-}
-.legends button[data-v-40668632] {
-  outline: 0;
-  cursor: pointer;
-  height: 44px;
-  font-size: 1rem;
-  padding: 5px 20px;
-  border-bottom: 1px solid #ccc;
-  text-align: left;
-  border-right: 0;
-  border-left: 0;
-  border-top: 1px solid #ccc;
-  width: 100%;
-  background: #eee;
-}
-.legends button span[data-v-40668632] {
-  display: inline-block;
-  float: right;
-}
-
-
-header[data-v-7e174fcc] {
-  position: sticky;
-  height: 100px;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  z-index: 1;
-  background: #eee;
-  box-shadow: 0 5px 5px -2px #ccc;
-}
-header li[data-v-7e174fcc] {
-  display: inline-block;
-}
-header button[data-v-7e174fcc] {
-  height: 50px;
-  line-height: 50px;
-  background: #ccc;
-  border: 1px solid #333;
-  border-radius: 3px;
-  font-size: 1.2rem;
-  padding: 0 10px;
-  opacity: 0.7;
-  cursor: pointer;
-}
-header li:first-child button[data-v-7e174fcc] {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-right: 0;
-  margin-right: -4px;
-}
-header li:last-child button[data-v-7e174fcc]:last-child {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-header button.active[data-v-7e174fcc],
-header button[data-v-7e174fcc]:hover {
-  background: #96e0ff;
-  opacity: 1;
-  cursor: default;
-}
-header button[data-v-7e174fcc]:hover {
-  text-decoration: underline;
-  cursor: pointer;
-}
-main[data-v-7e174fcc] {
-  padding: 0 20px;
-  position: relative;
-}
-main aside[data-v-7e174fcc] {
-  width: 15%;
-  min-width: 200px;
-  position: sticky;
-  top: 100px;
-  left: 0;
-  height: calc(100vh - 100px);
-  float: left;
-  overflow-y: scroll;
-  padding-top: 20px;
-  box-shadow: -5px 0 5px -2px #ccc inset;
-}
-main > div[data-v-7e174fcc] {
-  width: 85%;
-  padding-left: 20px;
-  padding-top: 20px;
-  margin-left: 15%;
-}
-h1[data-v-7e174fcc] {
-  display: block;
-  width: 359px;
-  height: 90px;
-  color: transparent;
-}
-h1.ultra-sun-moon[data-v-7e174fcc] {
-  background: url(26d3d92f0e15bd8289eb531f244c76ed.png);
-  background-size: cover;
-}
-h1.sun-moon[data-v-7e174fcc] {
-  background: url(d68fedc80d1f46ee61e71131b45806ef.png);
-  background-size: cover;
-}
-
 html,
 body,
 div,
@@ -274,7 +124,333 @@ table {
   border-spacing: 0;
 }
 
-body {
+
+ol li[data-v-3111413a] {
+  margin-bottom: 7px;
+  padding-left: 25px;
+  position: relative;
+}
+ol[data-v-3111413a] {
+  margin-bottom: 25px;
+}
+ol li[data-v-3111413a]:before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url(//cdn.bulbagarden.net/upload/9/93/Bag_Pok%C3%A9_Ball_Sprite.png)
+    center center;
+  background-size: cover;
+  position: absolute;
+  left: 0;
+}
+ul[data-v-3111413a] {
+  padding: 20px;
+}
+ul img[data-v-3111413a] {
+  width: 20px;
+  height: 20px;
+}
+ul li[data-v-3111413a] {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+.legends[data-v-3111413a] {
+  width: 100%;
+  position: sticky;
+  left: 0;
+  bottom: 0;
+  padding-bottom: 20px;
+  height: 44px;
+  overflow: hidden;
+  box-shadow: 0 -5px 5px -2px #ccc;
+  background: #eee;
+}
+.legends.open[data-v-3111413a] {
+  height: auto;
+}
+.legends button[data-v-3111413a] {
+  outline: 0;
+  cursor: pointer;
+  height: 44px;
+  font-size: 1rem;
+  padding: 5px 20px;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+  border-right: 0;
+  border-left: 0;
+  border-top: 1px solid #ccc;
+  width: 100%;
+  background: #eee;
+}
+.legends button span[data-v-3111413a] {
+  display: inline-block;
+  float: right;
+}
+svg[data-v-3111413a] {
+  width: 50px;
+  height: 50px;
+  fill: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+header {
+  position: sticky;
+  height: 100px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1;
+  background: #eee;
+  box-shadow: 0 5px 5px -2px #ccc;
+}
+header li {
+  display: inline-block;
+}
+header button {
+  height: 50px;
+  line-height: 50px;
+  background: #ccc;
+  border: 1px solid #333;
+  border-radius: 3px;
+  font-size: 1.2rem;
+  padding: 0 10px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+header li:first-child button {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 0;
+  margin-right: -4px;
+}
+header li:last-child button:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+header button.active,
+header button:hover {
+  background: #96e0ff;
+  opacity: 1;
+  cursor: default;
+}
+header button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+main {
+  padding: 0 20px;
+  position: relative;
+}
+main aside {
+  width: 15%;
+  min-width: 200px;
+  position: sticky;
+  top: 100px;
+  left: 0;
+  height: calc(100vh - 100px);
+  float: left;
+  overflow-y: scroll;
+  padding-top: 20px;
+  box-shadow: -5px 0 5px -2px #ccc inset;
+}
+main > div {
+  width: 85%;
+  padding-left: 20px;
+  padding-top: 20px;
+  margin-left: 15%;
+}
+header h1 {
+  display: block;
+  width: 359px;
+  height: 90px;
+  color: transparent;
+}
+header h1.ultra-sun-moon {
+  background: url(26d3d92f0e15bd8289eb531f244c76ed.png);
+  background-size: cover;
+}
+header h1.sun-moon {
+  background: url(d68fedc80d1f46ee61e71131b45806ef.png);
+  background-size: cover;
+}
+.back-to-top {
+  width: 50px;
+  height: 50px;
+  background: rgba(102, 102, 102, 0.6);
+  color: #fff;
+  position: fixed;
+  bottom: 50px;
+  right: 0;
+  display: block;
+  text-align: center;
+}
+.back-to-top svg {
+  width: 35px;
+  margin-top: 5px;
+  height: 35px;
+  fill: #fff;
+}
+
+html {
   font-size: 14px;
   font-family: 'Roboto', sans-serif;
 }
@@ -494,6 +670,189 @@ footer p {
   font-size: 0.7rem;
 }
 
+.hamburguer {
+  display: none;
+}
+@media (max-width: 1200px) {
+  html {
+    font-size: 20px;
+  }
+
+  header h1 {
+    display: none;
+  }
+
+  main aside {
+    left: -100%;
+    position: absolute;
+    top: -200px;
+    height: 100vh;
+    width: 100vw;
+    box-shadow: none;
+    background: #fff;
+    padding: 50px;
+    z-index: 5;
+  }
+
+  main aside.mobile-open {
+    left: 0;
+  }
+
+  main > div {
+    margin-left: 0;
+    width: 100%;
+    padding-left: 0;
+  }
+
+  /* Table */
+
+  .cell {
+    width: calc(100% / 8);
+  }
+
+  .cell[colspan='2'] {
+    width: calc(200% / 8);
+  }
+
+  /* Games colum title */
+  .cell[colspan='6'] {
+    width: calc(200% / 8);
+  }
+
+  /* Games colums */
+  .cell[colspan='3'] {
+    width: calc(100% / 8);
+  }
+
+  .area > .table > .row > .cell:nth-child(1) {
+    width: calc(100% / 8);
+  }
+
+  /* Alies column */
+  .area > .table > .row > .cell:nth-child(2) {
+    width: calc(200% / 8);
+  }
+
+  /* Sun image cell */
+  .area > .table > .row:nth-child(2) > .heading:first-child {
+    display: none;
+  }
+
+  .table .row:nth-child(2) .heading {
+    width: calc(100% / 8) !important;
+  }
+
+  .area > .table > .row:nth-child(2) > .heading:first-child + .heading {
+    display: none;
+  }
+  .area > .table > .row:nth-child(2) > .heading:first-child {
+    margin-left: 0;
+  }
+  /* End Table */
+
+  .cell > .table .row {
+    justify-content: center;
+  }
+
+  .cell > .table .row img {
+    margin: 0 auto;
+  }
+
+  .cell > .table .cell:nth-child(2) {
+    display: none;
+  }
+
+  .area > .table > .row > .cell:nth-child(5) img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .area > .table > .row > .cell:nth-child(2) span:nth-child(2n) {
+    display: none;
+  }
+
+  .cell > .table .row .cell:nth-child(1) {
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+  img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .table {
+    font-size: 1.5rem;
+  }
+
+  header {
+    height: 200px;
+    justify-content: flex-end;
+  }
+
+  header button {
+    font-size: 1.5rem;
+    height: 100px;
+    line-height: 100px;
+  }
+
+  .hamburguer {
+    display: block;
+    position: fixed;
+    z-index: 2;
+    top: 70px;
+    left: 40px;
+  }
+
+  .mobile-open .hamburguer {
+    left: auto;
+    right: 40px;
+  }
+
+  nav ol li {
+    font-size: 2rem;
+    margin-bottom: 20px !important;
+    padding-left: 80px !important;
+  }
+
+  nav ol li:before {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .legends {
+    height: 90px !important;
+  }
+
+  .legends button {
+    font-size: 3rem !important;
+    height: 90px !important;
+  }
+
+  .legends.open {
+    height: auto !important;
+  }
+
+  .legends ul li {
+    font-size: 2rem;
+  }
+
+  .legends ul li img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .back-to-top {
+    width: 100px;
+    height: 100px;
+    bottom: 100px;
+  }
+
+  .back-to-top svg {
+    width: 80px;
+    height: 80px;
+  }
+}
 
 
 /*# sourceMappingURL=style.css.map*/
