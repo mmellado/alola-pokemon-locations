@@ -31,6 +31,7 @@ const SANITIZE_HTML_OPTIONS = {
     h2: ['id'],
     table: ['class'],
     span: ['class'],
+    p: ['class'],
     div: ['class', 'style'],
   },
 };
@@ -82,7 +83,7 @@ const crawlSourceData = () => {
 };
 
 const buildGameMarkup = (data, area, id) => {
-  let markup = `<h2 id="${id}">${area}</h2>`;
+  let markup = `<h2 id="${id}"><span>${area}</span></h2>`;
   if (!data.length) {
     markup = `${markup}<p class="no-pkmn">No Pokemon data for this area</p>`;
   } else {

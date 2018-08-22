@@ -76,7 +76,7 @@ header button {
   background: #ccc;
   border: 1px solid #333;
   border-radius: 3px;
-  font-size: 16px;
+  font-size: 1.2rem;
   padding: 0 10px;
   opacity: 0.7;
   cursor: pointer;
@@ -117,10 +117,9 @@ main aside {
   position: sticky;
   top: 100px;
   left: 0;
-  padding-bottom: 20px;
   height: calc(100vh - 100px);
   float: left;
-  overflow: scroll;
+  overflow-y: scroll;
   padding-top: 20px;
   box-shadow: -5px 0 5px -2px #ccc inset;
 }

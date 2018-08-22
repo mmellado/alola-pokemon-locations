@@ -66,7 +66,7 @@ ol li {
 }
 
 ol {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 
 ol li:before {
@@ -91,18 +91,20 @@ ul img {
 }
 
 ul li {
-  font-size: 12px;
+  font-size: 0.9rem;
   margin-bottom: 10px;
 }
 
 .legends {
   background: #fff;
-  width: 15%;
-  position: fixed;
+  width: 100%;
+  position: sticky;
   left: 0;
   bottom: 0;
   padding-bottom: 20px;
-  height: 59px;
+  height: 44px;
+  overflow: hidden;
+  box-shadow: 0 -5px 5px -2px #ccc;
 }
 
 .legends.open {
@@ -110,9 +112,10 @@ ul li {
 }
 
 .legends button {
+  outline: 0;
   cursor: pointer;
   height: 44px;
-  font-size: 16px;
+  font-size: 1.1rem;
   padding: 5px 20px;
   border-bottom: 1px solid #ccc;
   text-align: left;
