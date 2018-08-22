@@ -169,4 +169,15 @@
     width: 60px;
     height: 60px;
   }
+
+  .back-to-top {
+    width: 100px;
+    height: 100px;
+    bottom: 100px;
+  }
+
+  .back-to-top svg {
+    width: 80px;
+    height: 80px;
+  }
 }
