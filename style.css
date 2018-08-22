@@ -798,6 +798,8 @@ footer p {
 
   .hamburguer {
     display: block;
+    border: 0;
+    background: none;
     position: fixed;
     z-index: 2;
     top: 70px;
