@@ -14,6 +14,11 @@
   border-bottom: 1px solid #eee;
 }
 
+.area > .table > .row:first-child {
+  position: sticky;
+  top: 100px;
+}
+
 .area > .table > .row > .cell {
   display: flex;
   align-items: center;
@@ -27,7 +32,7 @@
 .cell {
   width: calc(100% / 13);
   min-height: 40px;
-  line-height: 40px;
+  line-height: 1.5;
   text-align: center;
 }
 
@@ -35,6 +40,7 @@
   width: 100% !important;
   text-align: center !important;
   margin-left: 0 !important;
+  padding: 0 10px;
 }
 
 .cell[colspan='2'] {
@@ -68,9 +74,13 @@
   text-align: left;
 }
 
+.area > .table > .row > .cell:nth-child(5) img {
+  width: 25px;
+  height: 25px;
+}
+
 .table .row:nth-child(2) .heading {
   width: calc(100% / 13) !important;
-  height: 40px;
   text-align: center !important;
 }
 
@@ -79,7 +89,7 @@
 }
 
 .area > .table > .row:nth-child(2) > .heading:first-child[colspan='13'] {
-  width: 100%;
+  width: 100% !important;
 }
 
 .table .row:nth-child(2) .heading img {
@@ -151,5 +161,8 @@ img {
 footer {
   padding: 40px 20px 20px 20px;
   text-align: center;
+}
+
+footer p {
   font-size: 10px;
 }
