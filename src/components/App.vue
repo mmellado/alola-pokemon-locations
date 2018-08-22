@@ -11,6 +11,7 @@ export default {
   data: () => ({
     game: 'ultra-sun-moon',
     gameMarkup: ultraSunMoonMarkup,
+    isMobileMenuOpen: false,
   }),
   methods: {
     enableUltraSunMoon() {
@@ -20,6 +21,20 @@ export default {
     enableSunMoon() {
       this.game = 'sun-moon';
       this.gameMarkup = sunMoonMarkup;
+    },
+    toggleMobileMenu() {
+      this.isMobileMenuOpen = !this.isMobileMenuOpen;
+      if (this.isMobileMenuOpen) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = null;
+      }
+    },
+    closeMenu() {
+      if (this.isMobileMenuOpen) {
+        this.isMobileMenuOpen = false;
+        document.body.style.overflow = null;
+      }
     },
   },
 };
@@ -35,8 +50,8 @@ export default {
       </ul>
     </header>
     <main>
-      <aside>
-        <Menu></Menu>
+      <aside v-bind:class="{'mobile-open': isMobileMenuOpen}">
+        <Menu v-bind:isMobileMenuOpen="isMobileMenuOpen" v-bind:toggleMobileMenu="toggleMobileMenu" v-bind:closeMenu="closeMenu"></Menu>
       </aside>
       <div v-html="gameMarkup"></div>
     </main>
@@ -50,7 +65,7 @@ export default {
   </div>
 </template>
 
-<style scoped>
+<style>
 header {
   position: sticky;
   height: 100px;
@@ -131,19 +146,19 @@ main > div {
   margin-left: 15%;
 }
 
-h1 {
+header h1 {
   display: block;
   width: 359px;
   height: 90px;
   color: transparent;
 }
 
-h1.ultra-sun-moon {
+header h1.ultra-sun-moon {
   background: url('../img/ultra-sun-moon.png');
   background-size: cover;
 }
 
-h1.sun-moon {
+header h1.sun-moon {
   background: url('../img/sun-moon.png');
   background-size: cover;
 }

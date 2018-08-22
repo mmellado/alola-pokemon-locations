@@ -1,0 +1,172 @@
+.hamburguer {
+  display: none;
+}
+@media (max-width: 1200px) {
+  html {
+    font-size: 20px;
+  }
+
+  header h1 {
+    display: none;
+  }
+
+  main aside {
+    left: -100%;
+    position: absolute;
+    top: -200px;
+    height: 100vh;
+    width: 100vw;
+    box-shadow: none;
+    background: #fff;
+    padding: 50px;
+    z-index: 5;
+  }
+
+  main aside.mobile-open {
+    left: 0;
+  }
+
+  main > div {
+    margin-left: 0;
+    width: 100%;
+    padding-left: 0;
+  }
+
+  /* Table */
+
+  .cell {
+    width: calc(100% / 8);
+  }
+
+  .cell[colspan='2'] {
+    width: calc(200% / 8);
+  }
+
+  /* Games colum title */
+  .cell[colspan='6'] {
+    width: calc(200% / 8);
+  }
+
+  /* Games colums */
+  .cell[colspan='3'] {
+    width: calc(100% / 8);
+  }
+
+  .area > .table > .row > .cell:nth-child(1) {
+    width: calc(100% / 8);
+  }
+
+  /* Alies column */
+  .area > .table > .row > .cell:nth-child(2) {
+    width: calc(200% / 8);
+  }
+
+  /* Sun image cell */
+  .area > .table > .row:nth-child(2) > .heading:first-child {
+    display: none;
+  }
+
+  .table .row:nth-child(2) .heading {
+    width: calc(100% / 8) !important;
+  }
+
+  .area > .table > .row:nth-child(2) > .heading:first-child + .heading {
+    display: none;
+  }
+  .area > .table > .row:nth-child(2) > .heading:first-child {
+    margin-left: 0;
+  }
+  /* End Table */
+
+  .cell > .table .row {
+    justify-content: center;
+  }
+
+  .cell > .table .row img {
+    margin: 0 auto;
+  }
+
+  .cell > .table .cell:nth-child(2) {
+    display: none;
+  }
+
+  .area > .table > .row > .cell:nth-child(5) img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .area > .table > .row > .cell:nth-child(2) span:nth-child(2n) {
+    display: none;
+  }
+
+  .cell > .table .row .cell:nth-child(1) {
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+  img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .table {
+    font-size: 1.5rem;
+  }
+
+  header {
+    height: 200px;
+    justify-content: flex-end;
+  }
+
+  header button {
+    font-size: 1.5rem;
+    height: 100px;
+    line-height: 100px;
+  }
+
+  .hamburguer {
+    display: block;
+    position: fixed;
+    z-index: 2;
+    top: 70px;
+    left: 40px;
+  }
+
+  .mobile-open .hamburguer {
+    left: auto;
+    right: 40px;
+  }
+
+  nav ol li {
+    font-size: 2rem;
+    margin-bottom: 20px !important;
+    padding-left: 80px !important;
+  }
+
+  nav ol li:before {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .legends {
+    height: 90px !important;
+  }
+
+  .legends button {
+    font-size: 3rem !important;
+    height: 90px !important;
+  }
+
+  .legends.open {
+    height: auto !important;
+  }
+
+  .legends ul li {
+    font-size: 2rem;
+  }
+
+  .legends ul li img {
+    width: 60px;
+    height: 60px;
+  }
+}

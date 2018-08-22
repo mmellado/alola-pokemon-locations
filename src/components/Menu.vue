@@ -3,6 +3,7 @@ import menuData from '../../data/menu';
 
 export default {
   name: 'Menu',
+  props: ['isMobileMenuOpen', 'toggleMobileMenu', 'closeMenu'],
   data: () => ({
     menuData,
     legendOpen: false,
@@ -17,9 +18,19 @@ export default {
 
 <template>
   <nav>
+    <button class="hamburguer" v-on:click="toggleMobileMenu" aria-lable="toggle menu">
+      <svg v-if="!isMobileMenuOpen" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100">
+        <path class="line line-1" d="M5 13h90v14H5z"/>
+        <path class="line line-2" d="M5 43h90v14H5z"/>
+        <path class="line line-3" d="M5 73h90v14H5z"/>
+      </svg>
+      <svg v-if="isMobileMenuOpen" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+          <path fill="#1D1D1B" d="M28.941 31.786L.613 60.114a2.014 2.014 0 1 0 2.848 2.849l28.541-28.541 28.541 28.541c.394.394.909.59 1.424.59a2.014 2.014 0 0 0 1.424-3.439L35.064 31.786 63.41 3.438A2.014 2.014 0 1 0 60.562.589L32.003 29.15 3.441.59A2.015 2.015 0 0 0 .593 3.439l28.348 28.347z"/>
+      </svg>
+    </button>
     <ol>
       <li v-for="location in menuData" v-bind:key="location.id">
-        <a v-bind:href="'#' + location.id">{{location.name}}</a>
+        <a v-bind:href="'#' + location.id" v-on:click="closeMenu">{{location.name}}</a>
       </li>
     </ol>
 
@@ -130,4 +141,15 @@ ul li {
   display: inline-block;
   float: right;
 }
+
+svg {
+  width: 50px;
+  height: 50px;
+  fill: #000;
+}
 </style>
+.hamburguer {
+  display: none;
+}
+<style>
+
