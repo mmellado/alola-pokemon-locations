@@ -59,6 +59,7 @@ export default {
         </svg></a>
     </main>
     <footer>
+      <img src="https://licensebuttons.net/l/by-sa/3.0/88x31.png" alt="CC/SA License">
       <p>
         All information presented was sourced from <a href="https://bulbapedia.bulbagarden.net/" target="_blank">Bulbapedia</a>. 
         Pokémon © 2002-2018 Pokémon. © 1995-2018 Nintendo/Creatures Inc./GAME FREAK inc. TM, ® and Pokémon character names are trademarks of Nintendo.

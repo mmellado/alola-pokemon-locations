@@ -104,7 +104,7 @@
     height: 100px !important;
   }
 
-  img {
+  .table img {
     width: 100px;
     height: 100px;
   }
@@ -185,5 +185,18 @@
 
   .area > .table > .row:first-child {
     top: 200px;
+  }
+
+  footer {
+    flex-direction: column-reverse;
+  }
+
+  footer p {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  footer img {
+    width: 10rem;
   }
 }
