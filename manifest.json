@@ -1,8 +1,8 @@
 {
   "name": "Alola Pokémon Locations",
   "short_name": "Alola Pkmn Loc",
-  "theme_color": "#cccccc",
-  "background_color": "#cccccc",
+  "theme_color": "#24292e",
+  "background_color": "#24292e",
   "display": "standalone",
   "Scope": "/",
   "start_url": "/",

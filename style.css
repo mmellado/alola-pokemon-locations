@@ -125,15 +125,15 @@ table {
 }
 
 
-ol li[data-v-3111413a] {
+ol li[data-v-1c722e2e] {
   margin-bottom: 7px;
   padding-left: 25px;
   position: relative;
 }
-ol[data-v-3111413a] {
+ol[data-v-1c722e2e] {
   margin-bottom: 25px;
 }
-ol li[data-v-3111413a]:before {
+ol li[data-v-1c722e2e]:before {
   content: '';
   display: inline-block;
   width: 20px;
@@ -144,18 +144,18 @@ ol li[data-v-3111413a]:before {
   position: absolute;
   left: 0;
 }
-ul[data-v-3111413a] {
+ul[data-v-1c722e2e] {
   padding: 20px;
 }
-ul img[data-v-3111413a] {
+ul img[data-v-1c722e2e] {
   width: 20px;
   height: 20px;
 }
-ul li[data-v-3111413a] {
+ul li[data-v-1c722e2e] {
   font-size: 0.9rem;
   margin-bottom: 10px;
 }
-.legends[data-v-3111413a] {
+.legends[data-v-1c722e2e] {
   width: 100%;
   position: sticky;
   left: 0;
@@ -166,10 +166,10 @@ ul li[data-v-3111413a] {
   box-shadow: 0 -5px 5px -2px #ccc;
   background: #eee;
 }
-.legends.open[data-v-3111413a] {
+.legends.open[data-v-1c722e2e] {
   height: auto;
 }
-.legends button[data-v-3111413a] {
+.legends button[data-v-1c722e2e] {
   outline: 0;
   cursor: pointer;
   height: 44px;
@@ -183,14 +183,14 @@ ul li[data-v-3111413a] {
   width: 100%;
   background: #eee;
 }
-.legends button span[data-v-3111413a] {
+.legends button span[data-v-1c722e2e] {
   display: inline-block;
   float: right;
 }
-svg[data-v-3111413a] {
+svg[data-v-1c722e2e] {
   width: 50px;
   height: 50px;
-  fill: #000;
+  fill: #eee;
 }
 
 
@@ -359,8 +359,8 @@ header {
   align-items: center;
   padding: 0 20px;
   z-index: 1;
-  background: #eee;
-  box-shadow: 0 5px 5px -2px #ccc;
+  background: #24292e;
+  box-shadow: 0 5px 5px -2px #333;
 }
 header li {
   display: inline-block;
@@ -370,12 +370,12 @@ header button {
   background: none;
   border: 0;
   font-size: 1.3rem;
-  color: #666;
+  color: #ccc;
 }
 header button.active {
   font-size: 2rem;
   font-weight: bold;
-  color: #333;
+  color: #eee;
 }
 header button.active:hover {
   text-decoration: none;
@@ -383,7 +383,7 @@ header button.active:hover {
 }
 header button:hover {
   text-decoration: underline;
-  color: #333;
+  color: #eee;
 }
 header button:hover {
   text-decoration: underline;
