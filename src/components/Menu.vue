@@ -143,8 +143,8 @@ ul li {
 }
 
 svg {
-  width: 50px;
-  height: 50px;
+  width: 25px;
+  height: 25px;
   fill: #eee;
 }
 </style>

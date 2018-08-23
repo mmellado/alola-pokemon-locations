@@ -103,6 +103,10 @@
   padding-top: 20px;
 }
 
+.area:first-child {
+  padding-top: 0;
+}
+
 .area > .table {
   margin-bottom: 20px;
 }

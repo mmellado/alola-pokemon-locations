@@ -2,12 +2,12 @@
   display: none;
 }
 @media (max-width: 1200px) {
-  html {
-    font-size: 20px;
-  }
-
   header h1 {
     display: none;
+  }
+
+  main {
+    padding-bottom: 20px;
   }
 
   main aside {
@@ -91,40 +91,16 @@
     display: none;
   }
 
-  .area > .table > .row > .cell:nth-child(5) img {
-    width: 80px;
-    height: 80px;
-  }
-
   .area > .table > .row > .cell:nth-child(2) span:nth-child(2n) {
     display: none;
   }
 
-  .cell > .table .row .cell:nth-child(1) {
-    width: 100px !important;
-    height: 100px !important;
-  }
-
-  .table img {
-    width: 100px;
-    height: 100px;
-  }
-
   .table {
-    font-size: 1.5rem;
+    font-size: 0.8rem;
   }
 
   header {
-    height: 200px;
     justify-content: flex-end;
-  }
-
-  header button {
-    font-size: 2rem;
-  }
-
-  header button.active {
-    font-size: 3rem;
   }
 
   .hamburguer {
@@ -133,33 +109,13 @@
     background: none;
     position: fixed;
     z-index: 2;
-    top: 70px;
-    left: 40px;
+    top: 35px;
+    left: 25px;
   }
 
   .mobile-open .hamburguer {
     left: auto;
-    right: 40px;
-  }
-
-  nav ol li {
-    font-size: 2rem;
-    margin-bottom: 20px !important;
-    padding-left: 80px !important;
-  }
-
-  nav ol li:before {
-    width: 50px !important;
-    height: 50px !important;
-  }
-
-  .legends {
-    height: 90px !important;
-  }
-
-  .legends button {
-    font-size: 3rem !important;
-    height: 90px !important;
+    right: 25px;
   }
 
   .legends.open {
@@ -168,32 +124,15 @@
     overflow-y: scroll;
   }
 
-  .legends ul li {
-    font-size: 2rem;
-  }
-
-  .legends ul li img {
-    width: 60px;
-    height: 60px;
-  }
-
   .back-to-top {
-    width: 100px;
-    height: 100px;
-    bottom: 100px;
-  }
-
-  .back-to-top svg {
-    width: 80px;
-    height: 80px;
-  }
-
-  .area > .table > .row:first-child {
-    top: 200px;
+    width: 50px;
+    height: 50px;
+    bottom: 50px;
   }
 
   footer {
     flex-direction: column-reverse;
+    height: auto;
     position: static;
     box-shadow: none;
   }
@@ -203,18 +142,7 @@
     margin: 20px 0;
   }
 
-  footer img {
-    width: 10rem;
-  }
-
   footer .contribute a {
     flex-direction: column-reverse;
-    font-size: 2rem;
-  }
-
-  footer svg {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 10px;
   }
 }
