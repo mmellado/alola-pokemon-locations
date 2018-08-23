@@ -45,8 +45,8 @@ Pull requests with bug fixes and new features are always welcome :)
 
 Original Bulbapedia content is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike](https://creativecommons.org/licenses/by-nc-sa/2.5/) license. This basically means that:
 
-You may copy and modify this content, provided you attribute it to Bulbapedia.
-You may copy and modify this content, provided it is not for commercial purposes.
-You may copy and modify this content, provided the resulting work is also licensed under the same copyright as the Bulbapedia content.
+- You may copy and modify this content, provided you attribute it to Bulbapedia.
+- You may copy and modify this content, provided it is not for commercial purposes.
+- You may copy and modify this content, provided the resulting work is also licensed under the same copyright as the Bulbapedia content.
 
 ![CC License](https://licensebuttons.net/l/by-sa/3.0/88x31.png)
