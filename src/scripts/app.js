@@ -8,6 +8,9 @@ import '../styles/layout.css';
 import '../styles/tables.css';
 import '../styles/mobile.css';
 
+const noJS = document.getElementById('no-js');
+noJS.parentNode.removeChild(noJS);
+
 /* eslint-disable-next-line no-new */
 new Vue({ el: '#app', render: r => r(App) });
 
