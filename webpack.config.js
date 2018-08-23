@@ -62,6 +62,10 @@ const config = {
     new ServiceWorkerWebpackPlugin({
       entry: path.join(__dirname, './src/scripts/sw.js'),
       excludes: ['**/.*', '**/*.map', '**/*.html'],
+      publicPath:
+        process.env.NODE_ENV === 'production'
+          ? '/alola-pokemon-locations'
+          : '/',
     }),
   ],
   resolve: {
