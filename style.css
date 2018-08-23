@@ -703,13 +703,14 @@ footer .contribute svg {
 
   main aside {
     left: -100%;
-    position: absolute;
-    top: -200px;
+    position: fixed;
+    top: 0;
     height: 100vh;
     width: 100vw;
     box-shadow: none;
     background: #fff;
     padding: 50px;
+    padding-bottom: 0;
     z-index: 5;
   }
 
@@ -854,6 +855,8 @@ footer .contribute svg {
 
   .legends.open {
     height: auto !important;
+    max-height: 80vh;
+    overflow-y: scroll;
   }
 
   .legends ul li {
