@@ -125,15 +125,15 @@ table {
 }
 
 
-ol li[data-v-1c722e2e] {
+ol li[data-v-f917b644] {
   margin-bottom: 7px;
   padding-left: 25px;
   position: relative;
 }
-ol[data-v-1c722e2e] {
+ol[data-v-f917b644] {
   margin-bottom: 25px;
 }
-ol li[data-v-1c722e2e]:before {
+ol li[data-v-f917b644]:before {
   content: '';
   display: inline-block;
   width: 20px;
@@ -144,18 +144,18 @@ ol li[data-v-1c722e2e]:before {
   position: absolute;
   left: 0;
 }
-ul[data-v-1c722e2e] {
+ul[data-v-f917b644] {
   padding: 20px;
 }
-ul img[data-v-1c722e2e] {
+ul img[data-v-f917b644] {
   width: 20px;
   height: 20px;
 }
-ul li[data-v-1c722e2e] {
+ul li[data-v-f917b644] {
   font-size: 0.9rem;
   margin-bottom: 10px;
 }
-.legends[data-v-1c722e2e] {
+.legends[data-v-f917b644] {
   width: 100%;
   position: sticky;
   left: 0;
@@ -166,10 +166,10 @@ ul li[data-v-1c722e2e] {
   box-shadow: 0 -5px 5px -2px #ccc;
   background: #eee;
 }
-.legends.open[data-v-1c722e2e] {
+.legends.open[data-v-f917b644] {
   height: auto;
 }
-.legends button[data-v-1c722e2e] {
+.legends button[data-v-f917b644] {
   outline: 0;
   cursor: pointer;
   height: 44px;
@@ -183,13 +183,13 @@ ul li[data-v-1c722e2e] {
   width: 100%;
   background: #eee;
 }
-.legends button span[data-v-1c722e2e] {
+.legends button span[data-v-f917b644] {
   display: inline-block;
   float: right;
 }
-svg[data-v-1c722e2e] {
-  width: 50px;
-  height: 50px;
+svg[data-v-f917b644] {
+  width: 25px;
+  height: 25px;
   fill: #eee;
 }
 
@@ -364,6 +364,7 @@ header {
 }
 header li {
   display: inline-block;
+  color: #ccc;
 }
 header button {
   cursor: pointer;
@@ -652,6 +653,10 @@ footer .contribute svg {
   padding-top: 20px;
 }
 
+.area:first-child {
+  padding-top: 0;
+}
+
 .area > .table {
   margin-bottom: 20px;
 }
@@ -693,12 +698,12 @@ footer .contribute svg {
   display: none;
 }
 @media (max-width: 1200px) {
-  html {
-    font-size: 20px;
-  }
-
   header h1 {
     display: none;
+  }
+
+  main {
+    padding-bottom: 20px;
   }
 
   main aside {
@@ -782,40 +787,16 @@ footer .contribute svg {
     display: none;
   }
 
-  .area > .table > .row > .cell:nth-child(5) img {
-    width: 80px;
-    height: 80px;
-  }
-
   .area > .table > .row > .cell:nth-child(2) span:nth-child(2n) {
     display: none;
   }
 
-  .cell > .table .row .cell:nth-child(1) {
-    width: 100px !important;
-    height: 100px !important;
-  }
-
-  .table img {
-    width: 100px;
-    height: 100px;
-  }
-
   .table {
-    font-size: 1.5rem;
+    font-size: 0.8rem;
   }
 
   header {
-    height: 200px;
     justify-content: flex-end;
-  }
-
-  header button {
-    font-size: 2rem;
-  }
-
-  header button.active {
-    font-size: 3rem;
   }
 
   .hamburguer {
@@ -824,33 +805,13 @@ footer .contribute svg {
     background: none;
     position: fixed;
     z-index: 2;
-    top: 70px;
-    left: 40px;
+    top: 35px;
+    left: 25px;
   }
 
   .mobile-open .hamburguer {
     left: auto;
-    right: 40px;
-  }
-
-  nav ol li {
-    font-size: 2rem;
-    margin-bottom: 20px !important;
-    padding-left: 80px !important;
-  }
-
-  nav ol li:before {
-    width: 50px !important;
-    height: 50px !important;
-  }
-
-  .legends {
-    height: 90px !important;
-  }
-
-  .legends button {
-    font-size: 3rem !important;
-    height: 90px !important;
+    right: 25px;
   }
 
   .legends.open {
@@ -859,32 +820,15 @@ footer .contribute svg {
     overflow-y: scroll;
   }
 
-  .legends ul li {
-    font-size: 2rem;
-  }
-
-  .legends ul li img {
-    width: 60px;
-    height: 60px;
-  }
-
   .back-to-top {
-    width: 100px;
-    height: 100px;
-    bottom: 100px;
-  }
-
-  .back-to-top svg {
-    width: 80px;
-    height: 80px;
-  }
-
-  .area > .table > .row:first-child {
-    top: 200px;
+    width: 50px;
+    height: 50px;
+    bottom: 50px;
   }
 
   footer {
     flex-direction: column-reverse;
+    height: auto;
     position: static;
     box-shadow: none;
   }
@@ -894,19 +838,8 @@ footer .contribute svg {
     margin: 20px 0;
   }
 
-  footer img {
-    width: 10rem;
-  }
-
   footer .contribute a {
     flex-direction: column-reverse;
-    font-size: 2rem;
-  }
-
-  footer svg {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 10px;
   }
 }
 
