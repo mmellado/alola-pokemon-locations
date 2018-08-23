@@ -94,6 +94,7 @@ header {
 
 header li {
   display: inline-block;
+  color: #ccc;
 }
 
 header button {
