@@ -64,7 +64,7 @@ const config = {
       excludes: ['**/.*', '**/*.map', '**/*.html'],
       publicPath:
         process.env.NODE_ENV === 'production'
-          ? '/alola-pokemon-locations'
+          ? '/alola-pokemon-locations/'
           : '/',
     }),
   ],
