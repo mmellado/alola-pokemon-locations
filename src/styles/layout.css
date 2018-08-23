@@ -73,6 +73,12 @@ footer {
   justify-content: space-between;
   padding: 20px;
   line-height: 1.5;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 -5px 5px -2px #ccc;
 }
 
 footer p {

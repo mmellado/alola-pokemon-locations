@@ -128,6 +128,7 @@ header button:hover {
 main {
   padding: 0 20px;
   position: relative;
+  padding-bottom: 82px;
 }
 
 main aside {
@@ -136,7 +137,7 @@ main aside {
   position: sticky;
   top: 100px;
   left: 0;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 100px - 82px);
   float: left;
   overflow-y: scroll;
   padding-top: 20px;
@@ -173,7 +174,7 @@ header h1.sun-moon {
   background: rgba(102, 102, 102, 0.6);
   color: #fff;
   position: fixed;
-  bottom: 50px;
+  bottom: 132px;
   right: 0;
   display: block;
   text-align: center;

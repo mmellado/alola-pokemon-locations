@@ -191,6 +191,8 @@
 
   footer {
     flex-direction: column-reverse;
+    position: static;
+    box-shadow: none;
   }
 
   footer p {
