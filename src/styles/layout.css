@@ -72,10 +72,24 @@ footer {
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+  line-height: 1.5;
 }
 
 footer p {
   font-size: 0.7rem;
   max-width: 50%;
-  text-align: right;
+  text-align: center;
+}
+
+footer .contribute {
+  display: inline-block;
+}
+
+footer .contribute a {
+  display: flex;
+  align-items: center;
+}
+
+footer .contribute svg {
+  margin-left: 10px;
 }
