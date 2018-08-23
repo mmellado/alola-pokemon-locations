@@ -45,8 +45,9 @@ export default {
     <header>
       <h1 v-bind:class="game">Alola Pokemon Locations</h1>
       <ul>
-        <li><button v-bind:class="{active: game === 'ultra-sun-moon'}" v-on:click="enableUltraSunMoon">Pokemon Ultra Sun and Ultra Moon</button></li>
-        <li><button v-bind:class="{active: game === 'sun-moon'}" v-on:click="enableSunMoon">Pokemon Sun and Moon</button></li>
+        <li><button v-bind:class="{active: game === 'ultra-sun-moon'}" v-on:click="enableUltraSunMoon">USUM</button></li>
+        <li> / </li>
+        <li><button v-bind:class="{active: game === 'sun-moon'}" v-on:click="enableSunMoon">US</button></li>
       </ul>
     </header>
     <main>
@@ -96,34 +97,27 @@ header li {
 }
 
 header button {
-  height: 50px;
-  line-height: 50px;
-  background: #ccc;
-  border: 1px solid #333;
-  border-radius: 3px;
-  font-size: 1.2rem;
-  padding: 0 10px;
-  opacity: 0.7;
   cursor: pointer;
+  background: none;
+  border: 0;
+  font-size: 1.3rem;
+  color: #666;
 }
 
-header li:first-child button {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-right: 0;
-  margin-right: -4px;
+header button.active {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
 }
 
-header li:last-child button:last-child {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-header button.active,
-header button:hover {
-  background: #96e0ff;
-  opacity: 1;
+header button.active:hover {
+  text-decoration: none;
   cursor: default;
+}
+
+header button:hover {
+  text-decoration: underline;
+  color: #333;
 }
 
 header button:hover {
