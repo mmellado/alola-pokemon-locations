@@ -4,7 +4,7 @@
   "theme_color": "#24292e",
   "background_color": "#24292e",
   "display": "standalone",
-  "start_url": "/",
+  "start_url": "/alola-pokemon-locations",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
