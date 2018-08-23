@@ -3,6 +3,8 @@ const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 
 const config = {
   entry: './src/scripts/app.js',
@@ -53,6 +55,10 @@ const config = {
     new MiniCssExtractPlugin({
       filename: 'style.css',
     }),
+    new CopyPlugin([
+      { from: './src/images', to: './images' },
+      { from: './src/manifest.json', to: './manifest.json' },
+    ]),
   ],
   resolve: {
     alias: {
@@ -84,6 +90,10 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
+    }),
+    new ServiceWorkerWebpackPlugin({
+      entry: path.join(__dirname, './src/scripts/sw.js'),
+      excludes: ['**/.*', '**/*.map', '**/*.html'],
     }),
   ]);
 }

@@ -9,11 +9,13 @@
   "dependencies": {
     "chalk": "^2.4.1",
     "cheerio": "^1.0.0-rc.2",
+    "copy-webpack-plugin": "^4.5.2",
     "fs-extra": "^7.0.0",
     "js-beautify": "^1.7.5",
     "request": "^2.88.0",
     "request-promise": "^4.2.2",
     "sanitize-html": "^1.18.4",
+    "serviceworker-webpack-plugin": "^1.0.1",
     "vue": "^2.5.17"
   },
   "devDependencies": {
