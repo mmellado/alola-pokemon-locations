@@ -12,4 +12,41 @@ Since the markup rendered is directly crawled from Bulbapedia, there is only so 
 
 As a final note, if any discrepancies are found compared to the data found in Bulbapedia, file an issuee as well. Chances are the information in Bulbapedia was update and needs ot be re-crawled. However, it may also be possible that the styling hacks ended up hiding some rows from a particular location table.
 
-Enjoy catching the aall around Alola!
+Enjoy catching the all around Alola!
+
+## Development
+
+The app is split into 2 parts.
+
+1. The crawler
+2. A Vue.js app acting as a frontend for the information crawled
+
+After cloning the repo, first install the dependencies
+
+```
+npm install
+```
+
+Then, crawl the data from Bulbapedia. This may take a some time depending on your connection
+
+```
+npm run crawl
+```
+
+Finally, you can run the development environment to start testing your changes
+
+```
+npm run dev
+```
+
+Pull requests with bug fixes and new features are always welcome :)
+
+## License
+
+Original Bulbapedia content is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike](https://creativecommons.org/licenses/by-nc-sa/2.5/) license. This basically means that:
+
+You may copy and modify this content, provided you attribute it to Bulbapedia.
+You may copy and modify this content, provided it is not for commercial purposes.
+You may copy and modify this content, provided the resulting work is also licensed under the same copyright as the Bulbapedia content.
+
+![CC License](https://licensebuttons.net/l/by-sa/3.0/88x31.png)

@@ -4,7 +4,7 @@
   "description": "Tool to crawl the location of all pokemon in the Alola region from Bulbapedia and render it in a nicer way to follow as you play the game",
   "main": "index.js",
   "author": "[\"Marcos Mellado\", \"marcos@mellados.com\", \"https://mellados.com\"]",
-  "license": "MIT",
+  "license": "CC BY-SA",
   "private": false,
   "dependencies": {
     "chalk": "^2.4.1",
