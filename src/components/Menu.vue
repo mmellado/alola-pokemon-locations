@@ -145,7 +145,7 @@ ul li {
 svg {
   width: 50px;
   height: 50px;
-  fill: #000;
+  fill: #eee;
 }
 </style>
 .hamburguer {

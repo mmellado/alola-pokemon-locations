@@ -59,6 +59,10 @@ const config = {
       { from: './src/images', to: './images' },
       { from: './src/manifest.json', to: './manifest.json' },
     ]),
+    new ServiceWorkerWebpackPlugin({
+      entry: path.join(__dirname, './src/scripts/sw.js'),
+      excludes: ['**/.*', '**/*.map', '**/*.html'],
+    }),
   ],
   resolve: {
     alias: {
@@ -90,10 +94,6 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
-    }),
-    new ServiceWorkerWebpackPlugin({
-      entry: path.join(__dirname, './src/scripts/sw.js'),
-      excludes: ['**/.*', '**/*.map', '**/*.html'],
     }),
   ]);
 }

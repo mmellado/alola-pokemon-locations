@@ -88,8 +88,8 @@ header {
   align-items: center;
   padding: 0 20px;
   z-index: 1;
-  background: #eee;
-  box-shadow: 0 5px 5px -2px #ccc;
+  background: #24292e;
+  box-shadow: 0 5px 5px -2px #333;
 }
 
 header li {
@@ -101,13 +101,13 @@ header button {
   background: none;
   border: 0;
   font-size: 1.3rem;
-  color: #666;
+  color: #ccc;
 }
 
 header button.active {
   font-size: 2rem;
   font-weight: bold;
-  color: #333;
+  color: #eee;
 }
 
 header button.active:hover {
@@ -117,7 +117,7 @@ header button.active:hover {
 
 header button:hover {
   text-decoration: underline;
-  color: #333;
+  color: #eee;
 }
 
 header button:hover {
