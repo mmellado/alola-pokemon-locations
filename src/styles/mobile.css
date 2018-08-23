@@ -182,4 +182,8 @@
     width: 80px;
     height: 80px;
   }
+
+  .area > .table > .row:first-child {
+    top: 200px;
+  }
 }
