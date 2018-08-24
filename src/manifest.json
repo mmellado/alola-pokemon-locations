@@ -4,7 +4,8 @@
   "theme_color": "#24292e",
   "background_color": "#24292e",
   "display": "standalone",
-  "start_url": "/alola-pokemon-locations",
+  "scope": "https://mmellado.github.io/alola-pokemon-locations/",
+  "start_url": "https://mmellado.github.io/alola-pokemon-locations/",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
