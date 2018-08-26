@@ -149,7 +149,14 @@ const buildHTMLFiles = () => {
 };
 
 const buildMenu = () => {
-  const menuData = `const menu = ${JSON.stringify(MENU)}; export default menu;`;
+  const date = new Date();
+  const dateStr = `${date.getDate()}/${date.getMonth() +
+    1}/${date.getFullYear()} @ ${date.getHours()}:${date.getMinutes()} UTC`;
+  const menu = {
+    created: dateStr,
+    menu: MENU,
+  };
+  const menuData = `const menu = ${JSON.stringify(menu)}; export default menu;`;
   fs.writeFile(MENU_FILE, menuData).catch(err => err);
 };
 

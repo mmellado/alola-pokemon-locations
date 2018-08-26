@@ -5,7 +5,8 @@ export default {
   name: 'Menu',
   props: ['isMobileMenuOpen', 'toggleMobileMenu', 'closeMenu'],
   data: () => ({
-    menuData,
+    menu: menuData.menu,
+    created: menuData.created,
     legendOpen: false,
   }),
   methods: {
@@ -28,8 +29,9 @@ export default {
           <path fill="#1D1D1B" d="M28.941 31.786L.613 60.114a2.014 2.014 0 1 0 2.848 2.849l28.541-28.541 28.541 28.541c.394.394.909.59 1.424.59a2.014 2.014 0 0 0 1.424-3.439L35.064 31.786 63.41 3.438A2.014 2.014 0 1 0 60.562.589L32.003 29.15 3.441.59A2.015 2.015 0 0 0 .593 3.439l28.348 28.347z"/>
       </svg>
     </button>
+    <span class="crawled">Last crawled on {{created}}</span>
     <ol>
-      <li v-for="location in menuData" v-bind:key="location.id">
+      <li v-for="location in menu" v-bind:key="location.id">
         <a v-bind:href="'#' + location.id" v-on:click="closeMenu">{{location.name}}</a>
       </li>
     </ol>
@@ -144,12 +146,13 @@ ul li {
 
 svg {
   width: 25px;
-  height: 25px;
+  height: px;
   fill: #eee;
 }
-</style>
-.hamburguer {
-  display: none;
-}
-<style>
 
+span {
+  font-size: 10px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+</style>
