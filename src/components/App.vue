@@ -144,7 +144,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  z-index: 1;
+  z-index: 2;
   background: #24292e;
   box-shadow: 0 5px 5px -2px #333;
 }
