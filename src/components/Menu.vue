@@ -82,6 +82,10 @@ ol {
   margin-bottom: 25px;
 }
 
+.crawled {
+  font-size: 10px;
+}
+
 ol li:before {
   content: '';
   display: inline-block;

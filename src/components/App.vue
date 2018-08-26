@@ -5,22 +5,78 @@ import cleaner from '../scripts/table-cleaner';
 const sunMoonMarkup = cleaner(require('../../data/sun-moon.html'));
 const ultraSunMoonMarkup = cleaner(require('../../data/ultra-sun-moon.html'));
 
+const gls = () => {
+  const obj = window.localStorage.getItem('apkmnl');
+  return obj ? JSON.parse(obj) : {};
+};
+
+const sls = data => {
+  window.localStorage.setItem('apkmnl', JSON.stringify(data));
+};
+
+const uls = pkmn => {
+  const obj = gls();
+  if (obj[pkmn]) {
+    obj[pkmn] = false;
+  } else {
+    obj[pkmn] = true;
+  }
+  sls(obj);
+};
+
 export default {
   name: 'App',
   components: { Menu },
   data: () => ({
     game: 'ultra-sun-moon',
-    gameMarkup: ultraSunMoonMarkup,
+    ultraSunMoonMarkup,
+    sunMoonMarkup,
     isMobileMenuOpen: false,
   }),
+  mounted() {
+    const rows = document.querySelectorAll('.area > .table > .row');
+    rows.forEach(row => {
+      const pkmnCell = row.querySelector(
+        '.cell:first-child .table span.table-span:first-child'
+      );
+      if (pkmnCell && pkmnCell.innerText !== 'Any') {
+        const pkmn = pkmnCell.innerText.toLowerCase().replace(/ /g, '-');
+        row.classList.add('pkmn-row');
+        row.setAttribute('data-pkmn', pkmn);
+      }
+    });
+    const pkmnRows = document.body.querySelectorAll('.pkmn-row');
+    const instance = this;
+    pkmnRows.forEach(row => {
+      row.addEventListener(
+        'click',
+        function() {
+          const pkmn = this.getAttribute('data-pkmn');
+          instance.togglePkmnState(pkmn);
+        },
+        false
+      );
+    });
+    const ls = gls();
+    console.log(ls);
+    Object.keys(ls).forEach(pkmn => {
+      if (ls[pkmn]) {
+        instance.togglePkmnState(pkmn);
+      }
+    });
+  },
   methods: {
+    togglePkmnState(pkmn) {
+      uls(pkmn);
+      document.querySelectorAll(`[data-pkmn=${pkmn}]`).forEach(row => {
+        row.classList.toggle('checked');
+      });
+    },
     enableUltraSunMoon() {
       this.game = 'ultra-sun-moon';
-      this.gameMarkup = ultraSunMoonMarkup;
     },
     enableSunMoon() {
       this.game = 'sun-moon';
-      this.gameMarkup = sunMoonMarkup;
     },
     toggleMobileMenu() {
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
@@ -41,7 +97,7 @@ export default {
 </script>
 
 <template>
-  <div id="wrapper">
+  <div id="wrapper" v-bind:class="game">
     <header>
       <h1 v-bind:class="game">Alola Pokemon Locations</h1>
       <ul>
@@ -54,7 +110,8 @@ export default {
       <aside v-bind:class="{'mobile-open': isMobileMenuOpen}">
         <Menu v-bind:isMobileMenuOpen="isMobileMenuOpen" v-bind:toggleMobileMenu="toggleMobileMenu" v-bind:closeMenu="closeMenu"></Menu>
       </aside>
-      <div v-html="gameMarkup"></div>
+      <div v-html="ultraSunMoonMarkup" class="game-ultra-sun-moon" v-once></div>
+      <div v-html="sunMoonMarkup" class="game-sun-moon" v-once></div>
       <a class="back-to-top" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 284.929 284.929">
         <path d="M282.082 195.285L149.028 62.24c-1.901-1.903-4.088-2.856-6.562-2.856s-4.665.953-6.567 2.856L2.856 195.285C.95 197.191 0 199.378 0 201.853c0 2.474.953 4.664 2.856 6.566l14.272 14.271c1.903 1.903 4.093 2.854 6.567 2.854s4.664-.951 6.567-2.854l112.204-112.202 112.208 112.209c1.902 1.903 4.093 2.848 6.563 2.848 2.478 0 4.668-.951 6.57-2.848l14.274-14.277c1.902-1.902 2.847-4.093 2.847-6.566.001-2.476-.944-4.666-2.846-6.569z"/>
         </svg></a>
@@ -186,5 +243,15 @@ header h1.sun-moon {
   margin-top: 5px;
   height: 35px;
   fill: #fff;
+}
+
+.game-ultra-sun-moon,
+.game-sun-moon {
+  display: none;
+}
+
+.sun-moon .game-sun-moon,
+.ultra-sun-moon .game-ultra-sun-moon {
+  display: block;
 }
 </style>
