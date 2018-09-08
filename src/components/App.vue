@@ -40,7 +40,10 @@ export default {
         '.cell:first-child .table span.table-span:first-child'
       );
       if (pkmnCell && pkmnCell.innerText !== 'Any') {
-        const pkmn = pkmnCell.innerText.toLowerCase().replace(/ /g, '-');
+        const pkmn = pkmnCell.innerText
+          .toLowerCase()
+          .replace(/ /g, '-')
+          .replace(/\./g, '');
         row.classList.add('pkmn-row');
         row.setAttribute('data-pkmn', pkmn);
       }
