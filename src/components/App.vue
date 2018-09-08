@@ -58,7 +58,6 @@ export default {
       );
     });
     const ls = gls();
-    console.log(ls);
     Object.keys(ls).forEach(pkmn => {
       if (ls[pkmn]) {
         instance.togglePkmnState(pkmn);
